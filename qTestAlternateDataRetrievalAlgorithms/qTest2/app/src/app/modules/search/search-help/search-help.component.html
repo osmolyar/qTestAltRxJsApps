@@ -1,0 +1,95 @@
+<app-nav-header [header]="'               TRDB Search : '"></app-nav-header>
+<div id='content'>
+	<div id='instructions'>
+		<div id="heading2">Instructions </div>
+		<div style="text-align: left">
+			<h3>Using views</h3>
+			<ul>
+				<li>Use buttons in header bar to switch between Search, Platforms, Sources, Kits and Kit Comparison views.</li>
+				<li>Search filters can be set/modified/saved/loaded from any of the above views</li>
+				<li>Kit Comparison view is drillable to test case names via Sources on the Y-axis</li>
+				<li>Custom values for X- and Y- axis breakdowns can be configured from any pivot view using the options menu</li>
+				<li>Use 'Hide Filter Panel'/'Show Filter Panel' to toggle filter panel visibility</li>
+			
+			</ul>
+			<h2>Instructions for search</h2>
+			<h3>Option 1: Search using filters</h3>
+			<ol>
+				<li>Select search criteria*</li>
+				<li>Click 'Search'</li>
+				<li>Using Column Selector, select output columns (optional)</li>
+				<li>Click 'Display Records' (optional)</li>
+				<li><span> Note: column selector is only available on the Search view</span></li>
+			</ol>
+			<ul class='nostyle'>
+				<li><span> * Right-hand side values are
+						case-insensitive; key names are case-sensitive</span></li>
+			</ul>
+			<h3>Option 2: Search using saved search</h3>
+			<ol>
+				<li>Select a saved named search from the "Load Search" select
+					list</li>
+				<li>Search will automatically load (results and search
+					criteria) when selected</li>
+			</ol>
+			<h3>Option 3: Search using URL 'query' parameter</h3>
+			<ol>
+				<li>Pass the name of a saved search using the 'query'
+					parameter, e.g. http://trdb.iscinternal.com/app/#/?query=Olga%20Search%20HSPD%20Selenium
+				</li>
+				<li>Note: a search name containing spaces can be pasted
+					directly into the url</li>
+				<li>Search is immediately executed, and the search parameters
+					are re-populated in the UI</li>
+			</ol>
+			<h3>Option 4: Search using search string</h3>
+			<ol>
+				<li>After a search is performed, a string representing the
+					search parameters is displayed under 'Search string'</li>
+				<li>Copy this string to clipboard</li>
+				<li>Paste into input field labeled "Paste saved search string:"</li>
+				<li>Click 'String search' (optional)</li>
+			</ol>
+			<h3>To save current search:</h3>
+			<span style="font-weight: bold"> PLEASE NOTE: new searches
+				cannot be saved when connecting via one of the Mirror servers</span>
+			<ol>
+				<li>Execute a search using any of the above options</li>
+				<li>Enter name of search in "Save search as" input box (will
+					automatically be pre-loaded if search executed using a saved
+					search)</li>
+				<li>Modify search criteria and/or display columns (optional)</li>
+				<li>Click 'Save search as'*</li>
+			</ol>
+			<ul class='nostyle'>
+				<li><span> *If a saved search with the same name exists,
+						it will be overwritten.</span></li>
+			</ul>
+
+		</div>
+	</div>
+	<div id='examples'>
+		<div id='samplecode'>
+			<div id="heading2">Sample uploaded JSON document</div>
+			<span>
+				<h3>Smoke.JDBC:</h3> <pre>
+					<app-json-display [json]="sampleDoc"></app-json-display>
+				</pre>
+			</span>
+		</div>
+		<div id='tips'
+			style="text-align: left; border: 1px solid black; padding-bottom: 8px">
+			<div id="heading2">Working with search results table</div>
+			<ul>
+				<li>To view document detail, click on result link under 'Test
+					Name/Details'</li>
+				<li>To view triage page, click on result link under 'Doc
+					Id/Triage'</li>
+				<li>To filter any result on status, click on pie segments in
+					Summary chart'</li>
+				<li>Use column filters to filter specific result fields</li>
+			</ul>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class='headingNav'>
+	<nav>
+		<ul class="nav">
+			<li *ngIf="router.url == '/searchHelp' || viewType!='Search'" (click)="goToSearch()" class="nav button1"><a title="Search">Search</a></li>
+			<li *ngIf="router.url == '/searchHelp' || viewType!='Platforms'" (click)="goToPivot()" class="nav button1"><a title="Platforms">Platforms</a></li>
+			<li *ngIf="router.url == '/searchHelp' || viewType!='Sources'" (click)="goToSource()" class="nav button1"><a title="Platforms">Sources</a></li>
+			<li *ngIf="router.url == '/searchHelp' || viewType!='Kits'" (click)="goToKits()" class="nav button1"><a title="Platforms">Kits</a></li>
+			<li *ngIf="router.url == '/searchHelp' || viewType!='Kit Comparison'" (click)="goToComparison()" class="nav button1"><a title="Platforms">Kit Comparison</a></li>
+			<li *ngIf="viewType!='Help'"  (click)="goToHelp()"  class="nav button1"><a title="Help">Help</a></li>
+			<li *ngIf="viewType!='Help'"  (click)="toggleFilters()"  class="nav button1"><a title="Help">{{filters}} Filter Panel</a></li>
+		</ul>
+	</nav>
+</div>

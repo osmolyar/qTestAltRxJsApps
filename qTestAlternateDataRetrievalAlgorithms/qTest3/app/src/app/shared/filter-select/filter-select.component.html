@@ -1,0 +1,14 @@
+<ng-select *ngIf="!disabled" type="text"
+	[items]="options" dropdownPosition="bottom" virtualScroll="true"
+	[addTag]="true" placeholder="Select or search an option"
+	[(ngModel)]="choice.value" name="choice.value">
+	 <ng-template
+	ng-option-tmp let-item="item" let-search="searchTerm">
+		<div [ngOptionHighlight]="search">{{ item }}</div>
+	</ng-template> 
+</ng-select>
+
+
+<ng-select *ngIf="disabled" type="text"
+	[disabled]="true" [(ngModel)]="blank" name="choice.value">
+</ng-select>

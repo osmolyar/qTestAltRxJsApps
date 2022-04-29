@@ -1,0 +1,16 @@
+<div id="heading2">Summary</div>
+<div id="chartContainer" style="display:flex;align-items:center;justify-content:center;height:80%">
+	<div *ngIf="pieChartData && pieChartData.length>0" id="Chart">
+      <canvas baseChart
+      [data]="pieChartData"
+      [labels]="pieChartLabels"
+      [chartType]="donutChartType"
+      [options]="pieChartOptions"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"
+      [colors] = "[{backgroundColor: ['forestgreen','red','royalblue']}]"
+      width="300" height="400">
+    </canvas>
+    <button (click)=unsetLabel() *ngIf="label !='all'">Show all</button>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<app-nav-header  [header]="'              qTest Search : '" [viewType]="viewType"></app-nav-header>
+<div id="all" class="resizable" *ngIf="showFilters">
+<app-search-filters  #searchFiltersRef [makeSearch]="makeSearch" [displaySearchString]="displaySearchString"
+[choices]="choices" [isProcessing]="isProcessing" [searchSubmitted]="searchSubmitted" [isError]="isError"
+ [resultlength]="resultlength" [createRestriction]="createRestriction" [executeStringQuery]="executeStringQuery" [availablefields]="availablefields"
+ [selectedfields]="selectedfields" [restriction]="restriction"></app-search-filters>
+		<app-column-selector *ngIf="viewType=='Search'" [PopulateTable]="PopulateTable" [isProcessing]="isProcessing" [availablefields]="availablefields" [(selectedfields)]="selectedfields" [displaySearchObject]="displaySearchObject" (selectedFields)="selectedfields=$event"></app-column-selector>
+
+ 	<app-summary [Totals] = "Totals" (label)="label=$event" [(label)]="label" > </app-summary>
+</div>
+ <app-results-table *ngIf="viewType=='Search'" [rowData]="model.records" [columnDefs]="model.columnDefsForGrid" [label]="label"></app-results-table> 
+<app-pivot-grid *ngIf="viewType!='Search'" [rowData]="model.records" [viewType]="viewType" ></app-pivot-grid>

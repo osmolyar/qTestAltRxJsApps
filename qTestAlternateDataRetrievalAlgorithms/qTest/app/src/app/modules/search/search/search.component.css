@@ -1,0 +1,85 @@
+#all {
+	width: 100%;
+	display: flex;
+	height: auto;
+	padding-top: 4px;
+}
+
+.resizable {
+	resize: vertical;
+	overflow: scroll;
+	border: 1px solid black;
+}
+
+.ng-select {
+  border: 0.8px;
+  border-color:black;
+  min-height: 0px;
+  border-radius: 0;
+}
+.ng-select .ng-select-container  {
+  min-height: 0px;
+  border-radius: 0;
+}
+
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}
+
+.ui-grid-header-cell-primary-focus {
+  line-height: 2.428571;
+}
+
+app-search-filters {
+	border: 1px solid black;
+	display: flex;
+	box-sizing: border-box;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 5px;
+	flex-grow: 1;
+	margin-left: 3px;
+	margin-right: 5px;
+	flex-basis: 1050px;
+	flex-direction: column;
+	min-height: min-content;
+	height:auto;
+}
+
+
+app-column-selector {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 5px;
+	flex-grow: 1;
+	flex-basis:100px;
+	height:auto;
+}
+
+app-summary {
+	border: 1px solid black;
+	display: inline-block;
+	align-items: center;
+	box-sizing: border-box;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 5px;
+	flex-grow: 1;
+	flex-basis: 80px;
+	height:auto;
+}
+
+

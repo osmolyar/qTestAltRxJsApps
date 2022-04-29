@@ -1,0 +1,60 @@
+
+.inner {
+	clear: both;
+}
+
+input {
+	background: #fcfcfc;
+	padding: 1px;
+	border: 1px solid #d5d5d5;
+	font-size: 15px;
+}
+
+option {
+	font-size: 15px;
+	text-align: left;
+}
+
+optgroup {
+	font-size: 15px;
+}
+
+input[type="text"], select {
+	padding: 5px;
+}
+
+
+.selectBoxes {
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+}
+
+.choiceSelect {
+	flex-basis: 240px ;
+	display: inline-block;
+	margin-right: 5px ;
+	flex-grow:1;
+}
+
+.choiceInput {
+  flex-basis: 230px ;
+	display: inline-block;
+	margin-right: 5px ;
+  flex-grow:1;
+  height: 24px;
+}
+
+.operatorSelect {
+	flex-basis: 140px;
+	display: inline-block ;
+	margin-right: 5px ;
+	flex-grow:1;
+}
+
+.indexSelect {
+	flex-basis: 150px;
+	display: inline-block;
+	margin-right: 5px;
+	flex-grow:1;
+}

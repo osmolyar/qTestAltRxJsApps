@@ -1,0 +1,136 @@
+<div id="heading2">Search Criteria</div>
+<div>
+	<form #myForm="ngForm" id="myForm" name="myForm" method="post"
+		(ngSubmit)="makeSearch(choices,numDays)">
+		<fieldset
+			*ngFor="let choice of choices; let last = last; let i =index"
+			class="choiceRow">
+			<div class='fieldset'>
+
+				<ng-select class="indexSelect" [items]="indexes" bindLabel="Name" bindValue="Name" dropdownPosition="bottom" virtualScroll="true"
+					placeholder="Select or search an option" [(ngModel)]="choice.name" name="choice{{i}}.name" [clearable]="true" [addTag]="true">
+					<ng-template
+					ng-option-tmp let-item="item" let-search="searchTerm">
+						<div [ngOptionHighlight]="search">{{ item.Name }}</div>
+					</ng-template>
+				</ng-select>
+				<ng-select *ngIf="!(choice.name=='Status' || choice.name=='Test Case Module' || choice.name=='Test Case Assigned To' || choice.name=='Assigned To'  )"
+				class="operatorSelect" [items]="operators" bindLabel="display" bindValue="value" dropdownPosition="bottom" [clearable]="false"
+					virtualScroll="true" placeholder="Select or search an option" [(ngModel)]="choice.operator" name="choice{{i}}.operator">
+					<ng-template ng-option-tmp let-item="item" let-search="searchTerm" >
+						<div [ngOptionHighlight]="search">{{ item.display }}</div>
+					</ng-template>
+				</ng-select>
+				<ng-select *ngIf="(choice.name=='Test Case Assigned To'  || choice.name=='Assigned To')"
+				class="operatorSelect" [items]="discreteOperators" bindLabel="display" bindValue="value" dropdownPosition="bottom" [clearable]="false"
+				virtualScroll="true" placeholder="Select or search an option" [(ngModel)]="choice.operator" name="choice{{i}}.operator">
+				<ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+					<div [ngOptionHighlight]="search">{{ item.display }}</div>
+				</ng-template>
+			</ng-select>
+			<ng-select *ngIf="(choice.name=='Status' || choice.name=='Test Case Module')"
+				class="operatorSelect" [items]="statusOperators" bindLabel="display" bindValue="value" dropdownPosition="bottom" [clearable]="false"
+				virtualScroll="true" placeholder="Select or search an option" [(ngModel)]="choice.operator" name="choice{{i}}.operator">
+				<ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+					<div [ngOptionHighlight]="search">{{ item.display }}</div>
+				</ng-template>
+			</ng-select>
+				<input class="choiceInput"
+					*ngIf="(!(choice.name=='project' || choice.name=='Status' || choice.name=='Test Case Assigned To' || choice.name=='Test Case Module' || choice.name=='Assigned To' || choice.name=='source' || choice.name=='testSuiteGroup') && ( choice.operator != 'is empty' && choice.operator && !choice.operator.includes('not empty')))"
+					type="text" [(ngModel)]="choice.value" name="choice{{i}}.value" placeholder="Enter filter value">
+				<input class="choiceInput"
+					*ngIf="(!(choice.name=='kit' || choice.name=='result' || choice.name=='platform' || choice.name=='source' || choice.name=='testSuiteGroup') && (choice.operator == 'is empty' ||(choice.operator && choice.operator.includes('not empty'))))"
+					[disabled]=true type="text" [(ngModel)]="blank" name="choice{{i}}.value">
+				<ng-select class="choiceSelect resultSelect" type="text" *ngIf='choice.name=="Status" && choice.operator != "is empty" && choice.operator && !choice.operator.includes("not empty")'
+						[items]="statusOptions"
+						bindLabel="display"
+						bindValue="value"
+						placeholder="Select or search an option"
+						[(ngModel)]="choice.value" name="choice{{i}}.value" [disabled]="choice.operator=='is empty' || choice.operator.includes('not empty') " >
+						<ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+							<div [ngOptionHighlight]="search">{{ item.display }}</div>
+						</ng-template>
+				</ng-select>
+					<app-filter-select [options]="userOptions" [choice]="choice"
+						class="choiceSelect"
+						*ngIf='(choice.name=="Test Case Assigned To" || choice.name=="Assigned To") && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+					<app-filter-select [options]="moduleOptions" [choice]="choice"
+						class="choiceSelect"
+						*ngIf='choice.name=="Test Case Module" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+					<app-filter-select [options]="projectOptions" [choice]="choice"
+					class="choiceSelect"
+					*ngIf='choice.name=="project" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+					<app-filter-select [options]="folderOptions" [choice]="choice"
+					class="choiceSelect"
+					*ngIf='choice.name=="folder" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+					<app-filter-select [options]="kitOptions" [choice]="choice"
+					class="choiceSelect"
+					*ngIf='choice.name=="kit" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+				<app-filter-select [options]="platformOptions" [choice]="choice"
+					class="choiceSelect"
+					*ngIf='choice.name=="platform" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+				<app-filter-select [options]="testSuiteGroupOptions"
+					[choice]="choice" class="choiceSelect"
+					*ngIf='choice.name=="testSuiteGroup" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+				<app-filter-select [options]="sourceOptions" [choice]="choice"
+					class="choiceSelect"
+					*ngIf='choice.name=="source" && choice.operator != "is empty" && !choice.operator.includes("not empty")'></app-filter-select>
+				<app-filter-select [disabled]="true" [choice]="choice"
+					class="choiceSelect"
+					*ngIf='(choice.name!="Name" && (choice.operator == "is empty" || (choice.operator && choice.operator.includes("not empty"))))'>
+				</app-filter-select>
+				<button class="remove" (click)="removeChoice(i)" type="button">-</button>
+				<button class="addNewRow" *ngIf="last" type="button"
+					(click)="addNewChoice()">+</button>
+				<span *ngIf="!last">AND</span>
+			</div>
+		</fieldset>
+		<div id="search">
+			<div style="width: 550px; padding-bottom: 20px; ">
+				<div class="inner" style="padding: 30px 0px 0px 0px;">Maximum number of history days to display:</div>
+				<input  id="maxItems" type="text" [(ngModel)]="numDays" name="numDays" placeholder="Enter number of days">
+			</div>
+			<button class="submit" type="submit" value="Search" [disabled]="isProcessing" ng-class="{'disabled-class': isProcessing}">Search</button>
+			<span id="processing" *ngIf='isProcessing' style="color: red">Submitting...
+			</span>
+			<span id="processing" *ngIf='isError' style="color: red">Error retrieving records. </span>
+			<span class="retrievedCount" id="retrievedCount" *ngIf='!isProcessing &&  searchSubmitted && !isError'
+				style="color: black">Retrieved record count: {{resultlength}}</span>
+			<div id="savedSearch2" style='display:none'>
+				<div class='savedSearch'>
+					<button class="submit" type="button"
+						(click)="saveSearch(savedSearchName,choices,numDays)">Save search as:</button>
+					<input class='savedSearchInput1' type="text"
+						[(ngModel)]="savedSearchName" name="savedSearchName" placeholder="Save current search as">
+				</div>
+				<div class='savedSearch'>
+					<button class="load" type="button"
+						(click)="loadSearch(loadSearchName)">Load search:</button>
+					<ng-select (change)="loadSearch(loadSearchName)" class="savedSearchInput2" type="text" [items]="savedSearches"
+						bindLabel="name" dropdownPosition="bottom" virtualScroll="true" [addTag]="true" placeholder="Select or search an option"
+						[(ngModel)]="loadSearchName" name="loadSearchName">
+						<ng-template
+						ng-option-tmp let-item="item" let-search="searchTerm">
+							<div [ngOptionHighlight]="search">{{ item.name }}</div>
+						</ng-template>
+					 </ng-select>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div id="savedSearch">
+	<span *ngIf='!isProcessing  && searchSubmitted && !isError'
+		style="font-weight: bold"> Query: </span><br> <span
+		*ngIf='!isProcessing  && searchSubmitted && !isError'
+		id="curatedSearchObject"> {{displaySearchString}}</span>
+</div>
+<div style="padding-bottom: 10px">
+	<span style="font-weight: bold">Paste query string:</span> <input
+		id="savedSearchString" [(ngModel)]="savedSearchString"
+		name="savedSearchString" placeholder="Saved search string">
+	<button class="submit" type="button" value="Search"
+		style="margin-left: 15px" [disabled]="isProcessing"
+		(click)="executeStringQuery(savedSearchString)"
+		ng-class="{'disabled-class': isProcessing}">String search</button>
+</div>

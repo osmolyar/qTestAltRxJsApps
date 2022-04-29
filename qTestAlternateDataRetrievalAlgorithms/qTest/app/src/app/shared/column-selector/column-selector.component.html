@@ -1,0 +1,8 @@
+<div id="heading2">Output Columns</div>
+<div id='fieldsPlusButton'></div>
+<div id="fields" style="display:flex">
+<dual-list style="width: 400px;" height="320px" [source]="availablefields" [(destination)]="selectedfields" filter="true"></dual-list>
+</div>
+<div id="displayRecords">
+<button class="displayRecords" type="button" ng-disabled="isProcessing || isRendering " (click)="createSearchObject(selectedfields,displaySearchObject)">Display records</button>
+</div>

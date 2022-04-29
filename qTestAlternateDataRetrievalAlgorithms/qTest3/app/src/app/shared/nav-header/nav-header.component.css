@@ -1,0 +1,30 @@
+.headingWithNav {
+	font-size: 30px;
+	text-align: center;
+	border: 1px solid lightgray;
+	width: 100%;
+	background-color: #e3efde;
+	height: 45px;
+	align-items: center;
+	position: relative;
+	top: -50%;
+	line-height: 45px;
+	margin: 0px 10px 1px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.headingText {
+	display:flex;
+	justify-content:center;
+	flex-grow:500;
+	align-items:center
+}
+
+nav, ul.nav {
+	display: flex;
+	height:30px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	justify-content: flex-end;
+}

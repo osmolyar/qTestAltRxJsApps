@@ -1,0 +1,15 @@
+
+summary {
+	border: 1px solid black;
+	display: inline-block;
+	align-items: center;
+	box-sizing: border-box;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 5px;
+	flex-grow: 1;
+	flex-basis: 80px;
+	height:auto;
+}

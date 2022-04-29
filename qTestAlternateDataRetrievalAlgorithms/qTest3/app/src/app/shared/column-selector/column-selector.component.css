@@ -1,0 +1,15 @@
+
+#displayrecords {
+	position: absolute;
+	bottom: 5px;
+	float: center;
+}
+
+.displayRecords {
+	width: 170px;
+	background-color: lightgreen;
+	font-size: 20px;
+	margin: 10px 0;
+	position: relative;
+	bottom: 0px;
+}

@@ -1,0 +1,389 @@
+#all {
+	width: 100%;
+	display: flex;
+	height: auto;
+	padding-top: 4px;
+}
+
+.resizable {
+	resize: vertical;
+	overflow: scroll;
+	border: 1px solid black;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}
+
+.ui-grid-header-cell-primary-focus {
+  line-height: 2.428571;
+}
+
+#saveSearch {
+	float: left;
+	border: 1px solid black;
+	display: inline-block;
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	flex-grow: 1;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+	height: auto;
+}
+
+#myForm {
+	margin-bottom: 10px;
+}
+
+.submit {
+	width: 160px;
+	background-color: #a5e8b6;
+	font-size: 20px;
+	margin: 1px 0;
+}
+
+.load {
+	width: 160px;
+	background-color:lightgray;
+	font-size: 20px;
+	margin: 1px 0;
+}
+
+.customKey {
+	width: 180px;
+	font-size: 15px;
+	margin: 8px 0;
+}
+
+
+.customKeyName {
+	width: 200px;
+	margin: 5px 0;
+	margin-left: 15px;
+	font-size: 11px;
+}
+
+.inner {
+	clear: both;
+}
+
+.displayRecords {
+	width: 170px;
+	background-color: lightgreen;
+	font-size: 20px;
+	margin: 10px 0;
+	position: relative;
+	bottom: 0px;
+}
+
+.heading {
+	font-size: 25px;
+	text-align: center;
+	float: center;
+	border: 1px solid black;
+	width: 100%;
+	background-color: #b8d6e8;
+	height: 40px;
+	vertical-align: middle;
+	position: relative;
+	top: -50%;
+	line-height: 40px;
+	margin: 10px 10px 10px 10px;
+}
+
+#heading2 {
+	font-size: 17px;
+	text-align: center;
+	float: center;
+	border: 1px solid black;
+	background-color: #c7ddeb;
+	margin-bottom: 5px;
+}
+
+#heading3 {
+	font-size: 17px;
+	text-align: center;
+	float: center;
+	border: 1px solid black;
+	background-color: #c7ddeb;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	height: 35px;
+	line-height: 35px;
+}
+
+form {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+fieldset {
+	background: #FCFCFC;
+	padding: 8px;
+	border: 1px solid #d5d5d5;
+	font-size: 15px;
+	display:flex;
+	display: inline-block;
+	flex-grow:1;
+	flex-basis:608px;
+	flex-wrap: wrap;
+}
+
+.fieldset {
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	flex-grow:1;
+	flex-basis:400px;
+}
+
+
+input {
+	background: #fcfcfc;
+	padding: 1px;
+	border: 1px solid #d5d5d5;
+	font-size: 15px;
+}
+
+input#maxItems {
+	background: #fcfcfc;
+	padding: 1px;
+	border: 1px solid #d5d5d5;
+	font-size: 12px;
+	width: 120px;
+}
+
+.button {
+	margin: 10px 0;
+	font-size: 25px;
+	width: 170px
+}
+
+option {
+	font-size: 15px;
+	text-align: left;
+}
+
+optgroup {
+	font-size: 15px;
+}
+
+#choicesDisplay {
+	padding: 10px;
+	background: rgb(227, 250, 227);
+	border: 1px solid rgb(171, 239, 171);
+	color: rgb(9, 56, 9);
+	vertical-align: bottom;
+}
+
+.remove {
+	background: #c76868;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 20px;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	padding: 4px 9px;
+	vertical-align: center;
+	line-height: 100%;
+	border: .5px solid black;
+	width: 30px;
+	margin-left:2px;
+	margin-right: 2px;
+}
+
+.addNewRow {
+	background-color: lightgreen;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 20px;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	padding: 4px 9px;
+	vertical-align: center;
+	line-height: 100%;
+	border: .5px solid black;
+	width: 30px;
+}
+
+input[type="text"], select {
+	padding: 5px;
+}
+
+
+.selectBoxes {
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+}
+
+.choiceSelect {
+	flex-basis: 240px ;
+	display: inline-block;
+	margin-right: 5px ;
+	flex-grow:1;
+}
+
+.choiceInput {
+  flex-basis: 230px ;
+	display: inline-block;
+	margin-right: 5px ;
+  flex-grow:1;
+  height: 24px;
+}
+
+.operatorSelect {
+	flex-basis: 140px;
+	display: inline-block ;
+	margin-right: 5px ;
+	flex-grow:1;
+}
+
+.indexSelect {
+	flex-basis: 150px;
+	display: inline-block;
+	margin-right: 5px;
+	flex-grow:1;
+}
+
+
+.addNew {
+	width: 140px;
+	font-size: 15px;
+	display: inline-block;
+}
+
+.removebuttons {
+	font-size: 12px;
+	display: inline-block;
+	background-color: lightgray;
+	border: solid gray .5px;
+	width: 120px;
+	margin: 2px 2px;
+	padding: 2px 2px;
+}
+
+.addbuttons {
+	font-size: 12px;
+	display: inline-block;
+	background: lightgreen;
+	border: solid gray .5px;
+	width: 120px;
+	margin: 2px 2px;
+}
+
+.saveSearch {
+	width: 140px;
+	font-size: 15px;
+	margin: 20px 200px;
+	display: inline-block;
+}
+
+.retrievedCount {
+	display: inline-block;
+	border: 1px;
+	font-size: 15px;
+	margin: 1px 0;
+	margin-left: 15px;
+}
+
+.retrievedTime {
+	display: inline-block;
+	border: 1px;
+	font-size: 15px;
+	margin: 1px 0;
+	margin-left: 15px;
+}
+
+#savedSearch {
+	display: inline-block;
+	border: 1px;
+	font-size: 15px;
+	margin: 15px 0;
+	margin-left: 0px;
+}
+
+#curatedSearchObject {
+	display: inline-block;
+	border: 1px;
+	font-size: 15px;
+	margin: 0px 0;
+	margin-left: 0px;
+	background-color: #cefdce;
+	width:600px;
+	word-wrap: break-word;
+}
+
+input#savedSearchString {
+	background: #fcfcfc;
+	padding: 1px;
+	border: 1px solid #d5d5d5;
+	font-size: 12px;
+	width: 400px;
+	height: 40px;
+}
+
+
+#savedSearch2 {
+	display:flex;
+	flex-direction: column;
+	margin-top: 20px;
+	padding-bottom:10px;
+}
+
+.savedSearch {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+}
+
+.savedSearchInput1 {
+	flex-grow:1;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+.savedSearchInput2 {
+	flex-grow:1;
+	margin-left: 10px;
+}
+
+#processing {
+	display: inline-block;
+	border: 1px;
+	font-size: 15px;
+	margin: 15px 0;
+	margin-left: 15px;
+}
+
+#numDays {
+	float: right;
+}
+
+.content {
+	border: 1px;
+	width: 700px;
+}
+
+#label {
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	float: center;
+}
+
+#search {
+	bottom: 5px;
+	display: flex;
+	flex-direction: column;
+}
